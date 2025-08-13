@@ -15,8 +15,8 @@ constexpr uint32_t kRxTypeEs8311MclkFreqHz = kRxTypeEs8311SampleRate * kRxTypeEs
 constexpr auto kRxTypeEs8311I2sMclk = GPIO_NUM_16;
 constexpr auto kRxTypeEs8311I2sSclk = GPIO_NUM_9;
 constexpr auto kRxTypeEs8311I2sWs = GPIO_NUM_45;
-constexpr auto kRxTypeEs8311I2sDsdin = GPIO_NUM_8;
-constexpr auto kRxTypeEs8311I2sAsdout = GPIO_NUM_10;
+constexpr auto kRxTypeEs8311I2sDsdin = GPIO_NUM_10;
+constexpr auto kRxTypeEs8311I2sAsdout = GPIO_NUM_8;
 constexpr auto kRxTypeEs8311I2cScl = GPIO_NUM_18;
 constexpr auto kRxTypeEs8311I2cSda = GPIO_NUM_17;
 
