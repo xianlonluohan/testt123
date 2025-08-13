@@ -20,6 +20,7 @@ constexpr auto kRxTypeEs8311I2sAsdout = GPIO_NUM_8;
 constexpr auto kRxTypeEs8311I2cScl = GPIO_NUM_18;
 constexpr auto kRxTypeEs8311I2cSda = GPIO_NUM_17;
 
+// ddddd
 i2s_chan_handle_t g_rx_handle = nullptr;
 i2s_chan_handle_t g_tx_handle = nullptr;
 
