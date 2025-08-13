@@ -105,10 +105,10 @@ void setup() {
 
 void loop() {
   int16_t buffer[16000 / 1000 * 20];
-  size_t bytes_read;           // 实际读取字节数
+  size_t bytes_read;          
 
 
   i2s_channel_read(g_rx_handle, buffer, sizeof(buffer), &bytes_read, UINT32_MAX);
-  CLOGI("Read %d bytes\n", bytes_read)
+  printf("Read %d bytes\n", bytes_read)
   i2s_channel_write(g_tx_handle, buffer, sizeof(buffer), nullptr, UINT32_MAX);
 }
