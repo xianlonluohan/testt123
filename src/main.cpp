@@ -15,8 +15,8 @@ constexpr uint32_t kRxTypeEs8311MclkFreqHz = kRxTypeEs8311SampleRate * kRxTypeEs
 constexpr auto kRxTypeEs8311I2sMclk = GPIO_NUM_16;
 constexpr auto kRxTypeEs8311I2sSclk = GPIO_NUM_9;
 constexpr auto kRxTypeEs8311I2sWs = GPIO_NUM_45;
-constexpr auto kRxTypeEs8311I2sDsdin = GPIO_NUM_10;
-constexpr auto kRxTypeEs8311I2sAsdout = GPIO_NUM_8;
+constexpr auto kRxTypeEs8311I2sDsdin = GPIO_NUM_8;
+constexpr auto kRxTypeEs8311I2sAsdout = GPIO_NUM_10;
 constexpr auto kRxTypeEs8311I2cScl = GPIO_NUM_18;
 constexpr auto kRxTypeEs8311I2cSda = GPIO_NUM_17;
 
@@ -105,6 +105,10 @@ void setup() {
 
 void loop() {
   int16_t buffer[16000 / 1000 * 20];
-  i2s_channel_read(g_rx_handle, buffer, sizeof(buffer), nullptr, UINT32_MAX);
+  size_t bytes_read;           // 实际读取字节数
+
+
+  i2s_channel_read(g_rx_handle, buffer, sizeof(buffer), &bytes_read, UINT32_MAX);
+  CLOGI("Read %d bytes\n", bytes_read)
   i2s_channel_write(g_tx_handle, buffer, sizeof(buffer), nullptr, UINT32_MAX);
 }
